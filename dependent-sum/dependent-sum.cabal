@@ -46,6 +46,7 @@ Library
                         Data.Some
   other-extensions:     PatternSynonyms
   build-depends:        base >= 4.9 && <5
+                      , constraints >= 0.9 && < 0.11
                       , constraints-extras >= 0.2 && < 0.4
 
   -- tight bounds, so re-exported API is versioned properly.

@@ -35,8 +35,10 @@ Library
   other-modules:        Data.Dependent.Sum.TH.Internal
   build-depends:        base >= 3 && <5,
                         dependent-sum >= 0.4.1 && < 0.8,
+                        containers >= 0.5.9.2,
+                        mtl,
                         template-haskell,
-                        th-extras >= 0.0.0.2
+                        th-abstraction >= 0.3.1.0
 
 test-suite test
   if impl(ghc < 8.0)
@@ -48,3 +50,5 @@ test-suite test
                , constraints-extras
                , dependent-sum
                , dependent-sum-template
+               , template-haskell
+               , th-abstraction
