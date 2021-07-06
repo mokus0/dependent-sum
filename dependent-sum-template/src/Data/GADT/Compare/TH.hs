@@ -76,11 +76,11 @@ newtype GComparing a b t = GComparing (Either (GOrdering a b) t)
 
 instance Functor (GComparing a b) where fmap f (GComparing x) = GComparing (either Left (Right . f) x)
 instance Monad (GComparing a b) where
-    return = GComparing . Right
+    return = pure
     GComparing (Left  x) >>= f = GComparing (Left x)
     GComparing (Right x) >>= f = f x
 instance Applicative (GComparing a b) where
-    pure = return
+    pure = GComparing . Right
     (<*>) = ap
 
 geq' :: GCompare t => t a -> t b -> GComparing x y (a :~: b)
