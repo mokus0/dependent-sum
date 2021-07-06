@@ -96,23 +96,22 @@ data Qux a where
 
 deriveGEq ''Foo
 deriveGEq ''Bar
-deriveGEq ''Baz
 deriveGEq ''Qux
+deriveGEq ''Baz
 
 deriveGCompare ''Foo
 deriveGCompare ''Bar
-deriveGCompare ''Baz
 deriveGCompare ''Qux
-
-instance Show (Foo a) where showsPrec = gshowsPrec
-instance Show (Bar a) where showsPrec = gshowsPrec
-instance Show (Baz a) where showsPrec = gshowsPrec
-instance Show (Qux a) where showsPrec = gshowsPrec
+deriveGCompare ''Baz
 
 deriveGShow ''Foo
+instance Show (Foo a) where showsPrec = gshowsPrec
 deriveGShow ''Bar
-deriveGShow ''Baz
+instance Show (Bar a) where showsPrec = gshowsPrec
 deriveGShow ''Qux
+instance Show (Qux a) where showsPrec = gshowsPrec
+deriveGShow ''Baz
+instance Show (Baz a) where showsPrec = gshowsPrec
 
 data Squudge a where
     E :: Ord a => Foo a -> Squudge a

@@ -18,7 +18,8 @@ tested-with:            GHC == 8.0.2,
                         GHC == 8.2.2,
                         GHC == 8.4.4,
                         GHC == 8.6.5,
-                        GHC == 8.8.3
+                        GHC == 8.8.3,
+                        GHC == 9.0.1
 
 extra-source-files:     ChangeLog.md
 
@@ -36,7 +37,8 @@ Library
   build-depends:        base >= 3 && <5,
                         dependent-sum >= 0.4.1 && < 0.8,
                         template-haskell,
-                        th-extras >= 0.0.0.2
+                        th-extras >= 0.0.0.2,
+                        th-abstraction
 
 test-suite test
   if impl(ghc < 8.0)
